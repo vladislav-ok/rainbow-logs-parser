@@ -1,0 +1,22 @@
+apply plugin: "java"
+
+version = "1.0"
+
+defaultTasks "clean", "build"
+    
+repositories {
+    mavenCentral()
+
+    dependencies {
+        compile files("../jar/logmx.jar")
+        testCompile 'junit:junit:4.4'
+    }
+}
+
+if (hasProperty('prod')) {
+    compileJava.options.debug = false
+    compileJava.options.debugOptions.debugLevel = "none"
+} else {
+    compileJava.options.debug = true
+    compileJava.options.debugOptions.debugLevel = "source,lines,vars"
+}
