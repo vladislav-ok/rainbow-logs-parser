@@ -9,7 +9,7 @@ repositories {
     mavenCentral()
 
     dependencies {
-        compile files("../jar/logmx.jar")
+        compile files("lib/logmx.jar")
         testCompile 'junit:junit:4.4'
     }
 }

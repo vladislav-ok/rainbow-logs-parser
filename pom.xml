@@ -7,7 +7,6 @@
     <version>1.0</version>
 
     <properties>
-        <logmx.dir>${basedir}/..</logmx.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.useIncrementalCompilation>false</maven.compiler.useIncrementalCompilation>
     </properties>
@@ -44,7 +43,7 @@
             <artifactId>logmx</artifactId>
             <scope>system</scope>
             <version>1.0</version>
-            <systemPath>${logmx.dir}/jar/logmx.jar</systemPath>
+            <systemPath>lib/logmx.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
