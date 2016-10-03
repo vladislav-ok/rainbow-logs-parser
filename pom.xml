@@ -13,10 +13,6 @@
 
     <packaging>jar</packaging>
 
-    <build>
-        <defaultGoal>clean install</defaultGoal>
-    </build>
-
     <profiles>
         <profile>
             <id>dev</id>
@@ -25,7 +21,6 @@
             </activation>
             <properties>
                 <maven.compiler.debuglevel>lines,vars,source</maven.compiler.debuglevel>
-                <maven.compiler.optimize>false</maven.compiler.optimize>
             </properties>
         </profile>
         <profile>
@@ -43,7 +38,7 @@
             <artifactId>logmx</artifactId>
             <scope>system</scope>
             <version>1.0</version>
-            <systemPath>lib/logmx.jar</systemPath>
+            <systemPath>${project.basedir}/lib/logmx.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -52,5 +47,22 @@
             <version>4.4</version>
         </dependency>
     </dependencies>
+
+    <build>
+        <defaultGoal>clean install</defaultGoal>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.2</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                    <optimize>true</optimize>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
